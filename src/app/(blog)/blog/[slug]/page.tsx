@@ -1,15 +1,13 @@
-import React from "react";
-
 export default async function BlogDetailsPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   return (
     <div className="text-5xl flex justify-center items-center w-full">
-      <h1>{slug}</h1>
+      <h1>{decodeURIComponent(slug)}</h1>
     </div>
   );
 }

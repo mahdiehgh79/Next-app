@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html dir="rtl" className={`${figtree.variable}`}>
+    <html dir="rtl" className={`${figtree.variable}`} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen font-bold uppercase">
         <header className="bg-gray-200 flex items-center justify-center text-3xl h-20">
           دوره معماری ری اکت

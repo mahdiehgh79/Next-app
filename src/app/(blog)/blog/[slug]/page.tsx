@@ -9,5 +9,5 @@ export default async function BlogDetailsPage({
     <div className="text-5xl flex justify-center items-center w-full">
       <h1>{decodeURIComponent(slug)}</h1>
     </div>
-  );
+  ); 
 }

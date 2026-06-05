@@ -1,4 +1,6 @@
 import "./globals.css";
+import { Header } from "./_components/header/header";
+import { Footer } from "./_components/footer/footer";
 
 import { Figtree } from "next/font/google";
 // import localFont from "next/font/local";
@@ -58,15 +60,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] bg-primary dark:bg-base-100 dark:text-base-content">
-        <header className="flex items-center justify-center text-3xl h-20">
-          دوره معماری ری اکت
-        </header>
+        <Header />
         <div className="flex-1 flex  justify-center items-center">
           {children}
         </div>
-        <footer className="flex items-center justify-center text-3xl h-20">
-          FOOTER
-        </footer>
+        <Footer />
       </body>
     </html>
   );

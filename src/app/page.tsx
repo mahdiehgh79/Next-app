@@ -1,4 +1,3 @@
-import { Colors } from "@/app/_components/colors";
 import Image from "next/image";
 export default function Home() {
   return (

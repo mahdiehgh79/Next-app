@@ -36,13 +36,13 @@ export const Button: React.FC<ButtonProps> = ({
   const classes = classNames(
     "btn",
     className,
-    { [`btn-${variant}`]: variant },
-    { [`${sizeClasses[size]}`]: size },
-    { "btn-outline": isOutline },
-    { "btn-link": isLink },
-    { [`${shapeClasses[shape]}`]: shape },
-    { "animated-icon": animatedIcon },
-    { "pointer-events-none opacity-80": isLoading }
+    variant && `btn-${variant}`,
+    sizeClasses[size],
+    isOutline && "btn-outline",
+    isLink && "btn-link",
+    shapeClasses[shape],
+    animatedIcon && "animated-icon",
+    isLoading && "pointer-events-none opacity-80"
   );
 
   return (

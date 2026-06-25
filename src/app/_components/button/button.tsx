@@ -1,6 +1,6 @@
 "use client";
 import { Size } from "../types/size.type";
-import classNames from "@/lib/classnames";
+import classNames from "classnames";
 import { ButtonProps, ButtonShape } from "./button.types";
 
 const sizeClasses: Record<Size, string> = {

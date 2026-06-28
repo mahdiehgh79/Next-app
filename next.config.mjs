@@ -5,9 +5,18 @@
 // };
 
 // export default nextConfig;
-/** @type {import('next').NextConfig} */
+/**
+// /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.classbon.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

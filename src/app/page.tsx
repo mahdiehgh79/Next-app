@@ -5,6 +5,8 @@ import { HomeHeroSection } from "./_components/home-hero-section/home-hero-secti
 import { CourseSummary } from "@/types/course-summary.interface";
 import next from "next";
 import { CourseCardList } from "./(courses)/_component/course-card-list";
+import { homeFeatures } from "@/data/home-features";
+import Feature from "./_components/feature/feature";
 import {
   IconArrowLeft,
   IconArrowLeftFill,
@@ -26,6 +28,14 @@ export default async function Home() {
   return (
     <>
       <HomeHeroSection />
+      <section className="dark:bg-base-75 mt-10">
+        <div className="container py-10 flex flex-col lg:flex-row gap-10 xl:gap-5">
+          {homeFeatures.map((feature) => (
+            <Feature key={`feature-${feature.title}`} feature={feature} />
+          ))}
+        </div>
+      </section>
+
       <section className="container  pt-20">
         <div className="text-center xl:text-right">
           <h2 className="text-2xl font-extrabold">تازه ترین دوره های آموزشی</h2>

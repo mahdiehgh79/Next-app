@@ -46,7 +46,6 @@ export const CourseCard: React.FC<CourseCardProps> = ({
           {basePrice}
         </div>
       </div>
-
       <Link
         className="card-footer animated-icon justify-center animated-icon"
         href={`/course/${slug}`}

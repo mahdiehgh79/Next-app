@@ -8,7 +8,8 @@ import { CourseCardList } from "./(courses)/_component/course-card-list";
 import { homeFeatures } from "@/data/home-features";
 import Feature from "./_components/feature/feature";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";
-
+import { BlogPostCardList } from "./(blog)/_components/blog-post-card-list";
+import { API_URL } from "@/configs/global";
 import {
   IconArrowLeft,
   IconArrowLeftFill,
@@ -29,6 +30,7 @@ async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
   const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`);
   return res.json();
 }
+
 export default async function Home() {
   const newestCoursesData = getNewestCourses(4);
   const newestBlogPostsData = getNewestPosts(4);
@@ -95,6 +97,7 @@ export default async function Home() {
             </Button>
           </div>
         </div>
+        <BlogPostCardList posts={newestBlogPosts} />
       </section>
     </>
   );

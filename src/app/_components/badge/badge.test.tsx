@@ -6,7 +6,7 @@ describe("Badge Component", () => {
   test("applies the correct css class for different badge variants", () => {
     const { rerender } = render(<Badge variant="primary">content</Badge>);
 
-    expect(screen.getByText("content")).toHaveClass("badge-primary");
+    expect(screen.getByText("content")).toHaveClass("badge-primsry");
 
     rerender(<Badge variant="info">content</Badge>);
 

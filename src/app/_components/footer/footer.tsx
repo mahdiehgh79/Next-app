@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Avatar } from "../avatar";
 
 export const Footer = () => {
   return (
@@ -60,6 +61,8 @@ export const Footer = () => {
         <div className="container py-10 flex justify-between items-center">
           <div className="flex gap-5 items-center ">
             <div className="flex flex-col">
+              <Avatar src="/images/developer.jpg" />
+
               <span className="text-base-content/50 ">Developed by:</span>
               <span className="text-lg font-bold tracking-wide">
                 Abbas Sepahvand

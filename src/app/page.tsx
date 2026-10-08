@@ -11,6 +11,7 @@ import { BlogPostSummary } from "@/types/blog-post-summary.interface";
 import { BlogPostCardList } from "./(blog)/_components/blog-post-card-list";
 import { API_URL } from "@/configs/global";
 import { Suspense } from "react";
+import { CardPlaceholder } from "./_components/placeholders";
 
 import {
   IconArrowLeft,
@@ -55,7 +56,13 @@ export default async function Home() {
             برای به‌روز موندن، یاد گرفتن نکته‌های تازه ضروری‌ه!
           </p>
         </div>
-        <Suspense fallback={<div>در حال دریافت اطلاعات ...</div>}>
+        <Suspense
+          fallback={
+            <div>
+              <CardPlaceholder count={4} className="mt-5" />
+            </div>
+          }
+        >
           <CourseCardList courses={[]} />
         </Suspense>{" "}
       </section>

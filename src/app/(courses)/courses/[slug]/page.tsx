@@ -1,4 +1,6 @@
 import { CourseDetails as CourseDetailsType } from "@/types/course-details.interface";
+import { Rating } from "@/app/_components/rating/rating";
+
 export async function generateStaticParams() {
   const slugs = await fetch(`http://api.classbon.com/api/courses/slugs`).then(
     (res) => res.json()
@@ -35,7 +37,9 @@ export default async function CourseDetails({
 
         <div className=" mt-5">Video Player Component</div>
       </div>
-      <div className="col-span-10 xl:col-span-3 bg-secondary"></div>
+      <div className="col-span-10 xl:col-span-3 ">
+        <Rating rate={3} size="small" variant="info" />
+      </div>
       <div className="col-span-10 xl:col-span-6 bg-info"></div>
       <div className="col-span-10 xl:col-span-4 bg-warning"></div>
     </div>

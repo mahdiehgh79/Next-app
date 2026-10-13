@@ -4,6 +4,8 @@ import { Progress } from "@/app/_components/progress";
 import { CourseAside } from "./_components/course-aside";
 import { Tab } from "@/types/tab.type";
 import { Tabs } from "@/app/_components/tabs";
+import { Accordion } from "@/app/_components/accordion";
+import { Accordion as AccordionType } from "@/types/accordion";
 
 export async function generateStaticParams() {
   const slugs = await fetch(`http://api.classbon.com/api/courses/slugs`).then(
@@ -28,6 +30,15 @@ export default async function CourseDetails({
 
   const course = await getCourse(slug);
 
+  const faqs: AccordionType[] = course.frequentlyAskedQuestions.map((faq) => ({
+    id: faq.id,
+    title: faq.question,
+    content: faq.answer,
+  }));
+  console.log("COURSE API RESPONSE:", course);
+
+  console.log("FAQ DATA:", course.frequentlyAskedQuestions);
+
   const tabs: Tab[] = [
     {
       label: "مشخصات دوره",
@@ -39,7 +50,7 @@ export default async function CourseDetails({
     },
     {
       label: "سوالات متداول",
-      content: "accordion components",
+      content: <Accordion data={faqs} />,
     },
   ];
 

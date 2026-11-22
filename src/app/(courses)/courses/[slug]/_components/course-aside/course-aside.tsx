@@ -110,7 +110,9 @@ export const CourseAside: React.FC<CourseAsideProps> = ({
       </div>
       <div>Enrollment in course component</div>
       <div className="border-t border-dashed dark:border-base-content/20 my-5 pt-8 mb-0 flex gap-4 items-center">
-        <Avatar src={`http://api.classbon.com/api/picture/${profileImageId}`} />
+        <Avatar
+          src={`https://react-architecture.darkube.ir/api/picture/${profileImageId}`}
+        />
         <div>
           <span className="font-semibold">{authorName}</span>
           <p className="dark:text-base-content/60 font-semibold">

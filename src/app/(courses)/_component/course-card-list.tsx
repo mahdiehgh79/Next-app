@@ -5,7 +5,7 @@ import { CourseCard, CourseCardProps } from "./course-card";
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   const res = await fetch(
-    `https://api.classbon.com/api/courses/newest/${count}`,
+    `https://react-architecture.darkube.ir/api/courses/newest/${count}`,
     {
       next: { revalidate: 24 * 60 * 60 },
       cache: "no-store",

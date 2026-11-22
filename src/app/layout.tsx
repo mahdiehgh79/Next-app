@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Header } from "./_components/header/header";
 import { Footer } from "./_components/footer/footer";
+import QueryProvider from "@/providers/react-query-provider";
 
 import { Figtree } from "next/font/google";
 // import localFont from "next/font/local";
@@ -60,9 +61,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] bg-primary dark:bg-base-100 dark:text-base-content">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <QueryProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );

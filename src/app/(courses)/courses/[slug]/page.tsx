@@ -6,11 +6,12 @@ import { Tab } from "@/types/tab.type";
 import { Tabs } from "@/app/_components/tabs";
 import { Accordion } from "@/app/_components/accordion";
 import { Accordion as AccordionType } from "@/types/accordion";
+import CourseComments from "./_components/comments/course-comments";
 
 export async function generateStaticParams() {
-  const slugs = await fetch(`http://api.classbon.com/api/courses/slugs`).then(
-    (res) => res.json()
-  );
+  const slugs = await fetch(
+    `https://react-architecture.darkube.ir/api/courses/slugs`
+  ).then((res) => res.json());
 
   return (slugs as string[]).map((slug) => ({
     slug: slug,
@@ -18,7 +19,9 @@ export async function generateStaticParams() {
 }
 
 async function getCourse(slug: string): Promise<CourseDetailsType> {
-  const res = await fetch(`http://api.classbon.com/api/courses/${slug}`);
+  const res = await fetch(
+    `https://react-architecture.darkube.ir/api/courses/${slug}`
+  );
   return res.json();
 }
 export default async function CourseDetails({
@@ -43,7 +46,7 @@ export default async function CourseDetails({
     },
     {
       label: "دیدگاه‌ها و پرسش",
-      content: "course comments",
+      content: <CourseComments />,
     },
     {
       label: "سوالات متداول",

@@ -32,7 +32,7 @@ import {
 //   return res.json();
 // }
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`);
+  const res = await fetch(`https://react-architecture.darkube.ir/api/blog/newest/${count}`);
   return res.json();
 }
 
